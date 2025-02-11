@@ -1,7 +1,11 @@
 from flask import Flask
-app= Flask(__name__)
+import os
+
+app = Flask(__name__)  # Fix the double underscores here
+
 @app.route("/")
 def home():
-    return "Hello, Heroku is running!"
-if __name__ =="__main__":
-    app.run(host="0.0.0.0, port=5000")
+    return "Hello, Flask is running on Heroku!"
+
+if __name__ == "__main__":  # Fix the double underscores here too
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
