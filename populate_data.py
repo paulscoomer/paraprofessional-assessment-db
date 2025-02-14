@@ -102,7 +102,7 @@ try:
         # Insert into database
         cur.execute(
             """
-            INSERT INTO participants (gender, role, education_level, age, ders_acceptance, ders_goals, ders_impulse, ders_awareness, ders_strategies, ders_clarity, iccs_total, literacy_reading, literacy_grammar, literacy_critical, math_numerical, math_problem_solving, math_data_interpretation)
+            INSERT INTO participants (gender, role, education_level, age_range, ders_acceptance, ders_goals, ders_impulse, ders_awareness, ders_strategies, ders_clarity, iccs_total, literacy_reading, literacy_grammar, literacy_critical, math_numerical, math_problem_solving, math_data_interpretation)
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
             """,
             (
