@@ -53,7 +53,7 @@ def get_age_range(role, education):
 
 # Generate assessment scores
 def generate_ders():
-    return {
+    ders_scores = {
         "nonacceptance": random.randint(6, 30),
         "goals": random.randint(5, 25),
         "impulse": random.randint(6, 30),
