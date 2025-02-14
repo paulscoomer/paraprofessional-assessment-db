@@ -3,7 +3,7 @@ import psycopg2
 from faker import Faker
 
 # Database connection setup
-DATABASE_URL = "your_database_url_here"
+DATABASE_URL = "postgres://u4gn2oc4sl89kl:pab7eeb42fcd87eabdaf527f38bd38ec839730ee50c4c30160a0fd620d6951f79@cd1goc44htrmfn.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dedbcjon211l4f"
 
 # Initialize Faker
 fake = Faker()
