@@ -51,7 +51,7 @@ def get_age(role, education):
 # Generate assessment scores
 def generate_ders():
     return {
-        "acceptance": random.randint(6, 30),
+        "nonacceptance": random.randint(6, 30),
         "goals": random.randint(5, 25),
         "impulse": random.randint(6, 30),
         "awareness": random.randint(6, 30),
@@ -60,10 +60,26 @@ def generate_ders():
     }
 
 def generate_iccs():
-    mean = 80
-    std_dev = 5
-    score = int(random.gauss(mean, std_dev))
-    return max(30, min(150, score))
+    # Generate the total score for ICCS based on a normal distribution
+    total_score = int(random.gauss(80, 5))  # Mean = 80, Std Dev = 5
+    total_score = max(30, min(150, total_score))  # Keep the score between 30 and 150
+    
+    # Ensure the subscores sum up to the total score and are within the range of 3-15
+    subscores = []
+    remaining_score = total_score
+    
+    # Generate 9 subscores between 3 and 15, ensuring their sum will leave the 10th subscore between 3 and 15
+    for _ in range(9):
+        score = random.randint(3, 15)
+        subscores.append(score)
+        remaining_score -= score
+    
+    # Make sure the last subscore is between 3 and 15
+    last_subscore = remaining_score if 3 <= remaining_score <= 15 else random.randint(3, 15)
+    subscores.append(last_subscore)
+    
+    # Return the 10 subscores along with the total score
+    return subscores + [total_score]
 
 def generate_literacy():
     return {
@@ -102,7 +118,7 @@ try:
         # Insert into database
         cur.execute(
             """
-            INSERT INTO participants (gender, role, education_level, age_range, ders_acceptance, ders_goals, ders_impulse, ders_awareness, ders_strategies, ders_clarity, iccs_total, literacy_reading, literacy_grammar, literacy_critical, math_numerical, math_problem_solving, math_data_interpretation)
+            INSERT INTO participants (gender, role, education_level, age_range, ders_nonacceptance, ders_goals, ders_impulse, ders_awareness, ders_strategies, ders_clarity, iccs_total, literacy_comprehension, literacy_grammar, literacy_critical, math_numerical, math_problem_solving, math_data_interpretation)
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
             """,
             (
