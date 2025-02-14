@@ -149,6 +149,7 @@ try:
 )
 
 
+
     conn.commit()
     print("Dummy data inserted successfully! Total records:", total_participants)
 
