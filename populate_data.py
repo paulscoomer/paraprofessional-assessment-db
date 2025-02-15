@@ -134,7 +134,7 @@ try:
                     %s, %s, %s, %s, %s, %s, %s, 
                     %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
                     %s, %s, %s, %s, 
-                    %s, %s, %s, %s);
+                    %s, %s, %s, %s, %s);
             """,
             (
                 gender, role, education, age_range, 
