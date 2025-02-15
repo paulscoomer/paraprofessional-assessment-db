@@ -102,8 +102,7 @@ def generate_math():
 
 # Connect to the database
 try:
-    conn = psycopg2.connect("postgres://u4gn2oc4sl89kl:pab7eeb42fcd87eabdaf527f38bd38ec839730ee50c4c30160a0fd620d6951f79@cd1goc44htrmfn.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dedbcjon211l4f"
-)
+    conn = psycopg2.connect(DATABASE_URL)
     cur = conn.cursor()
 
     # Clear table before inserting new data
@@ -121,39 +120,36 @@ try:
         literacy_scores = generate_literacy()
         math_scores = generate_math()
 
-    # Insert into database
-    cur.execute(
-    """
-    INSERT INTO participants 
-    (gender, role, education_level, age_range, 
-     ders_nonacceptance, ders_goals, ders_impulse, ders_awareness, ders_strategies, ders_clarity, ders_total, 
-     iccs_self_disclosure, iccs_empathy, iccs_social_relaxation, iccs_assertiveness, iccs_altercentrism, 
-     iccs_interaction_management, iccs_expressiveness, iccs_supportiveness, iccs_immediacy, iccs_environmental_control, iccs_total, 
-     literacy_comprehension, literacy_grammar, literacy_critical_thinking, literacy_total,
-     math_numerical_operations, math_problem_solving, math_data_interpretation, math_total)
-    VALUES (%s, %s, %s, %s, 
-            %s, %s, %s, %s, %s, %s, %s, 
-            %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
-            %s, %s, %s, %s, 
-            %s, %s, %s, %s);
-    """,
-    (
-        gender, role, education, age_range, 
-        ders_scores["nonacceptance"], ders_scores["goals"], ders_scores["impulse"], 
-        ders_scores["awareness"], ders_scores["strategies"], ders_scores["clarity"], ders_total,  
-        iccs_subscores["self_disclosure"], iccs_subscores["empathy"], iccs_subscores["social_relaxation"],
-        iccs_subscores["assertiveness"], iccs_subscores["altercentrism"], iccs_subscores["interaction_management"],
-        iccs_subscores["expressiveness"], iccs_subscores["supportiveness"], iccs_subscores["immediacy"], 
-        iccs_subscores["environmental_control"], iccs_total_score,  
-        literacy_scores["literacy_comprehension"], literacy_scores["literacy_grammar"], literacy_scores["literacy_critical_thinking"],
-        literacy_scores["literacy_total"],
-        math_scores["math_numerical_operations"], math_scores["math_problem_solving"], math_scores["math_data_interpretation"],
-        math_scores["math_total"]
-    )
-)
-
-
-
+        # Insert into database
+        cur.execute(
+            """
+            INSERT INTO participants 
+            (gender, role, education_level, age_range, 
+            ders_nonacceptance, ders_goals, ders_impulse, ders_awareness, ders_strategies, ders_clarity, ders_total, 
+            iccs_self_disclosure, iccs_empathy, iccs_social_relaxation, iccs_assertiveness, iccs_altercentrism, 
+            iccs_interaction_management, iccs_expressiveness, iccs_supportiveness, iccs_immediacy, iccs_environmental_control, iccs_total, 
+            literacy_comprehension, literacy_grammar, literacy_critical_thinking, literacy_total,
+            math_numerical_operations, math_problem_solving, math_data_interpretation, math_total)
+            VALUES (%s, %s, %s, %s, 
+                    %s, %s, %s, %s, %s, %s, %s, 
+                    %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
+                    %s, %s, %s, %s, 
+                    %s, %s, %s, %s);
+            """,
+            (
+                gender, role, education, age_range, 
+                ders_scores["nonacceptance"], ders_scores["goals"], ders_scores["impulse"], 
+                ders_scores["awareness"], ders_scores["strategies"], ders_scores["clarity"], ders_total,  
+                iccs_subscores["self_disclosure"], iccs_subscores["empathy"], iccs_subscores["social_relaxation"],
+                iccs_subscores["assertiveness"], iccs_subscores["altercentrism"], iccs_subscores["interaction_management"],
+                iccs_subscores["expressiveness"], iccs_subscores["supportiveness"], iccs_subscores["immediacy"], 
+                iccs_subscores["environmental_control"], iccs_total_score,  
+                literacy_scores["literacy_comprehension"], literacy_scores["literacy_grammar"], literacy_scores["literacy_critical_thinking"],
+                literacy_scores["literacy_total"],
+                math_scores["math_numerical_operations"], math_scores["math_problem_solving"], math_scores["math_data_interpretation"],
+                math_scores["math_total"]
+            )
+        )
 
     conn.commit()
     print("Dummy data inserted successfully! Total records:", total_participants)
