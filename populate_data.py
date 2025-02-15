@@ -83,20 +83,22 @@ def generate_iccs():
 
 
 def generate_literacy():
-    return {
-        "comprehension": random.choice([0, 25, 50, 75, 100]),
-        "grammar_syntax": random.choice([0, 33, 66, 100]),
-        "critical_thinking": random.choice([0, 33, 66, 100]),
+    scores = {
+        "literacy_comprehension": random.choice([0, 25, 50, 75, 100]),
+        "literacy_grammar": random.choice([0, 33, 66, 100]),
+        "literacy_critical_thinking": random.choice([0, 33, 66, 100]),
     }
-
+    scores["literacy_total"] = sum(scores.values()) // 3  # Compute average score
+    return scores
 
 def generate_math():
-    return {
-        "numerical_operations": random.choice([0, 25, 50, 75, 100]),
-        "problem_solving": random.choice([0, 33, 66, 100]),
-        "data_interpretation": random.choice([0, 33, 66, 100]),
+    scores = {
+        "math_numerical_operations": random.choice([0, 25, 50, 75, 100]),
+        "math_problem_solving": random.choice([0, 33, 66, 100]),
+        "math_data_interpretation": random.choice([0, 33, 66, 100]),
     }
-
+    scores["math_total"] = sum(scores.values()) // 3  # Compute average score
+    return scores
 
 # Connect to the database
 try:
@@ -119,21 +121,21 @@ try:
         literacy_scores = generate_literacy()
         math_scores = generate_math()
 
-        # Insert into database
-        cur.execute(
+    # Insert into database
+    cur.execute(
     """
     INSERT INTO participants 
     (gender, role, education_level, age_range, 
      ders_nonacceptance, ders_goals, ders_impulse, ders_awareness, ders_strategies, ders_clarity, ders_total, 
      iccs_self_disclosure, iccs_empathy, iccs_social_relaxation, iccs_assertiveness, iccs_altercentrism, 
      iccs_interaction_management, iccs_expressiveness, iccs_supportiveness, iccs_immediacy, iccs_environmental_control, iccs_total, 
-     literacy_comprehension, literacy_grammar, literacy_critical_thinking, 
-     math_numerical_operations, math_problem_solving, math_data_interpretation)
+     literacy_comprehension, literacy_grammar, literacy_critical_thinking, literacy_total,
+     math_numerical_operations, math_problem_solving, math_data_interpretation, math_total)
     VALUES (%s, %s, %s, %s, 
             %s, %s, %s, %s, %s, %s, %s, 
             %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
-            %s, %s, %s, 
-            %s, %s, %s);
+            %s, %s, %s, %s, 
+            %s, %s, %s, %s);
     """,
     (
         gender, role, education, age_range, 
@@ -143,10 +145,13 @@ try:
         iccs_subscores["assertiveness"], iccs_subscores["altercentrism"], iccs_subscores["interaction_management"],
         iccs_subscores["expressiveness"], iccs_subscores["supportiveness"], iccs_subscores["immediacy"], 
         iccs_subscores["environmental_control"], iccs_total_score,  
-        literacy_scores["comprehension"], literacy_scores["grammar_syntax"], literacy_scores["critical_thinking"],
-        math_scores["numerical_operations"], math_scores["problem_solving"], math_scores["data_interpretation"]
+        literacy_scores["literacy_comprehension"], literacy_scores["literacy_grammar"], literacy_scores["literacy_critical_thinking"],
+        literacy_scores["literacy_total"],
+        math_scores["math_numerical_operations"], math_scores["math_problem_solving"], math_scores["math_data_interpretation"],
+        math_scores["math_total"]
     )
 )
+
 
 
 
