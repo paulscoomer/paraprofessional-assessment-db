@@ -1,0 +1,591 @@
+# Paraprofessional Assessment Project Log
+
+This document records the development process of the Paraprofessional Assessment Project, capturing key milestones, decisions, and technical implementations. Each entry is timestamped to reflect the real-time progress.
+
+---
+
+## LOG ENTRY [2025-01-10]: Project Setup and Planning
+
+- **Initial Concept:**  
+  - Developed a project aimed at identifying skill gaps for paraprofessionals in education and health care, initially focusing on adolescent youth.  
+  - Outlined a multi-phase approach that includes assessment tool development, gap analysis, and curriculum design.
+
+- **Project Phases:**  
+  1. **Phase One:**  
+     - **Goal:** Identify current competencies and predict job success via a structured assessment and a predictive dashboard.
+  2. **Phase Two:**  
+     - **Goal:** Identify gaps between current skills and job requirements, providing a roadmap for professional development.
+  3. **Phase Three:**  
+     - **Goal:** Develop a structured learning path (curriculum) for further training.
+
+- **Key Components:**  
+  - An assessment tool evaluating competencies such as communication, conflict resolution, understanding of development, trauma-informed care, and data interpretation.
+  - A dashboard (using Excel/Power BI) to visualize assessment data for informed decision-making.
+
+---
+
+## LOG ENTRY [2025-01-17]: Updated Project Setup and Planning – Key Domains for Assessing Paraprofessional Readiness
+
+- **Evolving Focus:**  
+  Originally conceived to assess paraprofessional readiness for working with adolescents, the focus expanded to working with adolescents and adults in educational and healthcare settings. This clarification emphasizes that the trainees are adults who will be working with both populations.
+
+- **Purpose of the Assessment:**  
+  Evaluate the core competencies required for paraprofessionals, establishing a baseline for applicants while identifying training needs.
+
+- **Eight Essential Domains (Ranked by Importance):**  
+  1. **Emotional Regulation & Stress Tolerance:**  
+     - Prevents burnout, impulsive reactions, and escalation.
+  2. **Communication & Active Listening:**  
+     - Reduces conflict, builds trust, and prevents boundary violations.
+  3. **Basic Literacy & Numeracy:**  
+     - Determines how quickly candidates can acquire additional skills and is vital for specific training on data collection and progress monitoring.
+  4. **Ethical & Professional Boundaries:**  
+     - Critical for impulse control and for recognizing and implementing proper professional conduct, especially once the foundational skills are in place.
+  5. **Behavior Management & Crisis De-Escalation:**  
+     - Essential for handling acute situations; while trainable, it builds on strong emotional regulation and communication.
+  6. **Trauma-Informed Care & Mental Health Awareness:**  
+     - Important for understanding and addressing the needs of at-risk populations; a skill that can be developed with targeted training.
+  7. **Data Collection & Progress Monitoring:**  
+     - Relies on literacy/numeracy skills; vital for accountability and tracking progress.
+  8. **Disability Awareness (IDEA’s 13 Disability Categories & DSM-V):**  
+     - Though critical, it was ranked last as ongoing training will help employees acquire these concepts over time.
+
+- **Rationale Behind the Ranking:**  
+  - The top three domains—Emotional Regulation, Communication, and Basic Literacy & Numeracy—were deemed essential because they enable new hires to quickly adapt and understand the other domains.  
+    - **Emotional Regulation:** Skills such as managing impulsivity directly influence the ability to recognize and implement professional boundaries.  
+    - **Communication:** Effective communication is crucial for addressing behavior management and crisis de-escalation scenarios promptly.  
+    - **Basic Literacy & Numeracy:** These foundational skills are necessary for specific training on data collection and monitoring, ensuring that candidates can handle technical aspects of the role.  
+  - Disability Awareness, though important, is ranked last since employees with ongoing training are expected to acquire these concepts on the job.  
+  - The categorization of these domains draws on frameworks from both IDEA and the DSM-V.
+
+---
+
+## LOG ENTRY [2025-01-24]: Assessment Tool Selection for Emotion Regulation
+
+- **Context & Objective:**  
+  Evaluated various emotion regulation assessments—each validated in peer-reviewed studies—to determine which tool best captures the multifaceted aspects of emotion regulation critical for paraprofessional readiness in high-stress environments.
+
+- **Assessments Considered:**  
+  1. **Emotion Regulation Questionnaire (ERQ):**  
+     - **Description:** A 10-item self-report measure assessing cognitive reappraisal and expressive suppression (Gross & John, 2003).  
+     - **Relevance:** Widely used to understand emotion management strategies.
+  2. **Difficulties in Emotion Regulation Scale (DERS):**  
+     - **Description:** A 36-item instrument evaluating dimensions such as nonacceptance, impulse control, goal-directed behavior, emotional awareness, access to strategies, and clarity.  
+     - **Relevance:** Especially useful in clinical settings and directly relevant for managing high-stress situations in paraprofessional roles.  
+     - **Scoring:** Utilizes a Likert scale where lower scores indicate greater adaptability.
+  3. **Cognitive Emotion Regulation Questionnaire (CERQ):**  
+     - **Description:** A 36-item questionnaire measuring nine cognitive coping strategies.  
+     - **Relevance:** Focuses on cognitive aspects of emotion regulation.
+  4. **Emotion Regulation Inventory (ERI):**  
+     - **Description:** Measures three styles of emotion regulation (autonomous, controlled, impersonal) based on self-determination theory.
+  5. **Interpersonal Emotion Regulation Questionnaire (IERQ):**  
+     - **Description:** A 20-item measure assessing the use of social interactions to regulate emotions.
+
+- **Selection & Rationale:**  
+  The **DERS** was selected due to its comprehensive coverage of emotion regulation facets and its direct relevance to the real-world demands on paraprofessionals working with emotionally volatile populations.
+
+---
+
+## LOG ENTRY [2025-01-24]: Communication Assessment Tool Evaluation
+
+- **Theoretical Framework:**  
+  - Explored various communication theories with emphasis on Habermas' theory of communicative action (Habermas, 2015), which differentiates strategic communication from communication aimed at understanding.
+
+- **Models and Assessments Considered:**  
+  - **Affective Communication Assessment (ACA):**  
+    - Focuses on emotional expression and understanding for individuals with complex communication needs.
+  - **Checklist of Communication Competence (Triple C):**  
+    - Evaluates communication skills across five stages using structured observations and tasks.
+  - **Communication Matrix:**  
+    - Assesses communication functions across seven levels, particularly for individuals with complex needs.
+
+- **Comparative Evaluation:**  
+  - **Communicative Competence Scale (CCS):**  
+    - Composed of 36 Likert-scale items assessing the ability to choose appropriate communicative behaviors.
+  - **Final Selection – Interpersonal Communication Competence Scale (ICCS):**  
+    - **Structure:** A 30-item self-report instrument evaluating ten dimensions: self-disclosure, empathy, social relaxation, assertiveness, interaction management, altercentrism, expressiveness, supportiveness, immediacy, and environmental control.  
+    - **Measurement:** Uses a 5-point Likert scale.  
+    - **Rationale:** Chosen for its strong psychometric properties and relevance for paraprofessionals.
+
+---
+
+## LOG ENTRY [2025-01-24, Updated]: Additional Details for ICCS Selection
+
+- **Overview of the ICCS:**  
+  Developed by Rubin and Martin in 1994, the ICCS assesses an individual's ability to manage interpersonal communication across contexts by evaluating:
+  - **Self-Disclosure**
+  - **Empathy**
+  - **Social Relaxation**
+  - **Assertiveness**
+  - **Interaction Management**
+  - **Altercentrism**
+  - **Expressiveness**
+  - **Supportiveness**
+  - **Immediacy**
+  - **Environmental Control**
+
+- **Scoring Rubric:**  
+  - Likert scale from 1 (Strongly Disagree) to 5 (Strongly Agree).  
+  - Includes reverse scoring for negatively worded items, with subscale and total scores calculated by summing respective items.
+  
+- **Reference:**  
+  Rubin, R. B., & Martin, M. M. (1994). *Development of a measure of interpersonal communication competence.* Communication Research Reports, 11(1), 33-44.
+
+---
+
+## LOG ENTRY [2025-01-31]: Literacy and Numeracy Assessment Development
+
+- **Assessment Standards Considered:**  
+  - **WRAT (Wide Range Achievement Test):**  
+    - Gold standard for assessing reading, spelling, and arithmetic; proprietary.
+  - **Alternatives:**  
+    - **Penn Reading Assessment – Computer Adaptive Test (PRA-CAT):** Open-source and available via Concerto.
+    - **California Achievement Test (CAT):** Standardized test for reading, language, and math; some formats may be low-cost.
+    - **Brigance Diagnostic Inventories:** Reviewed as part of the process.
+
+- **Decision Rationale:**  
+  Developed a custom assessment based on:
+  - **10-grade Common Core Standards for Literacy**  
+  - **8th-Grade Standards for Math**  
+  to focus on foundational skills rather than advanced high school-level competencies.
+
+---
+
+## LOG ENTRY [2025-02-07]: Demographic Data Collection & Platform Decision
+
+- **Demographic Data Collection:**  
+  - Collected data on:
+    - **Role:** Administrator, Professional Therapist/Teacher, Paraprofessional, No Experience in the Field.
+    - **Age Category:** Under 18, 18-24, 25-34, 35-44, 45-54, 55+.
+    - **Gender:** Male, Female.
+    - **Education Level:** Ranging from No Degree to Post Graduate Education (including Doctorates).
+
+- **Platform Delivery Decision:**  
+  - **Initial Plan:** Use Moodle LMS for assessment delivery.
+  - **Revised Approach:**  
+    - Selected a dedicated quiz model on the WordPress site for its wider reach, improved user experience, customization, data integration, and ease of setup.
+  - **Final Choice:**  
+    - Implemented using the Forminator plugin due to its flexibility and robust third-party connection options.
+
+---
+
+## LOG ENTRY [2025-02-08]: Database Schema Development
+
+- **Repository Setup:**  
+  - Created the **paraprofessional-assessment-db** repository on GitHub.
+  - Initially considered ElephantSQL, then switched to Heroku after ElephantSQL discontinued services.
+
+- **Heroku Setup & Flask API Development:**  
+  - Logged into Heroku CLI using VS Code Bash Terminal:
+    ```
+    heroku login
+    heroku pg:psql -a paraprofessional-assessment
+    ```
+  - Created a Flask API (`app.py`) with:
+    ```python
+    from flask import Flask
+    app = Flask(__name__)
+
+    @app.route("/")
+    def home():
+        return "Hello, Heroku is running!"
+
+    if __name__ == "__main__":
+        app.run(host="0.0.0.0", port=5000)
+    ```
+  - Committed the Procfile and pushed the changes to GitHub.
+  - Created `requirements.txt` with:
+    ```
+    flask
+    gunicorn
+    ```
+
+- **Literacy and Math Subdomains:**  
+  - **Literacy:**  
+    - Reading Comprehension (4 questions), Grammar & Syntax (3 questions), Critical Thinking (3 questions).
+  - **Math:**  
+    - Numerical Operations (4 questions), Problem Solving (3 questions), Data Interpretation (3 questions).
+
+- **Database Schema:**  
+  Created the **participants** table with columns for demographics, assessment scores (DERS, ICCS, Literacy, Math), overall score, and a timestamp:
+  ```sql
+  CREATE TABLE participants (
+      id SERIAL PRIMARY KEY,
+      name VARCHAR(100),  -- Optional Name
+      email VARCHAR(255),  -- Optional Email
+      role VARCHAR(50),
+      gender VARCHAR(10),
+      education_level VARCHAR(50),
+      -- DERS Scores
+      ders_nonacceptance FLOAT,
+      ders_goals FLOAT,
+      ders_impulse FLOAT,
+      ders_awareness FLOAT,
+      ders_strategies FLOAT,
+      ders_clarity FLOAT,
+      ders_total FLOAT,
+      -- ICCS Scores
+      iccs_self_disclosure FLOAT,
+      iccs_empathy FLOAT,
+      iccs_social_relaxation FLOAT,
+      iccs_assertiveness FLOAT,
+      iccs_altercentrism FLOAT,
+      iccs_interaction_management FLOAT,
+      iccs_expressiveness FLOAT,
+      iccs_supportiveness FLOAT,
+      iccs_immediacy FLOAT,
+      iccs_environmental_control FLOAT,
+      iccs_total FLOAT,
+      -- Literacy Scores
+      literacy_comprehension FLOAT,
+      literacy_grammar FLOAT,
+      literacy_critical_thinking FLOAT,
+      literacy_total FLOAT,
+      -- Math Scores
+      math_numerical_operations FLOAT,
+      math_problem_solving FLOAT,
+      math_data_interpretation FLOAT,
+      math_total FLOAT,
+      -- Weighted Overall Score
+      overall_score FLOAT,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+# Paraprofessional Assessment Project Log
+
+This document records the development process of the Paraprofessional Assessment Project, capturing key milestones, decisions, and technical implementations. Each entry is timestamped to reflect the real-time progress.
+
+---
+
+## LOG ENTRY [2025-01-10]: Project Setup and Planning
+
+- **Initial Concept:**  
+  - Developed a project aimed at identifying skill gaps for paraprofessionals in education and health care, initially focusing on adolescent youth.  
+  - Outlined a multi-phase approach that includes assessment tool development, gap analysis, and curriculum design.
+
+- **Project Phases:**  
+  1. **Phase One:**  
+     - **Goal:** Identify current competencies and predict job success via a structured assessment and a predictive dashboard.
+  2. **Phase Two:**  
+     - **Goal:** Identify gaps between current skills and job requirements, providing a roadmap for professional development.
+  3. **Phase Three:**  
+     - **Goal:** Develop a structured learning path (curriculum) for further training.
+
+- **Key Components:**  
+  - An assessment tool evaluating competencies such as communication, conflict resolution, understanding of development, trauma-informed care, and data interpretation.
+  - A dashboard (using Excel/Power BI) to visualize assessment data for informed decision-making.
+
+---
+
+## LOG ENTRY [2025-01-17]: Updated Project Setup and Planning – Key Domains for Assessing Paraprofessional Readiness
+
+- **Evolving Focus:**  
+  Originally conceived to assess paraprofessional readiness for working with adolescents, the focus expanded to working with adolescents and adults in educational and healthcare settings. This clarification emphasizes that the trainees are adults who will be working with both populations.
+
+- **Purpose of the Assessment:**  
+  Evaluate the core competencies required for paraprofessionals, establishing a baseline for applicants while identifying training needs.
+
+- **Eight Essential Domains (Ranked by Importance):**  
+  1. **Emotional Regulation & Stress Tolerance:**  
+     - Prevents burnout, impulsive reactions, and escalation.
+  2. **Communication & Active Listening:**  
+     - Reduces conflict, builds trust, and prevents boundary violations.
+  3. **Basic Literacy & Numeracy:**  
+     - Determines how quickly candidates can acquire additional skills and is vital for specific training on data collection and progress monitoring.
+  4. **Ethical & Professional Boundaries:**  
+     - Critical for impulse control and for recognizing and implementing proper professional conduct, especially once the foundational skills are in place.
+  5. **Behavior Management & Crisis De-Escalation:**  
+     - Essential for handling acute situations; while trainable, it builds on strong emotional regulation and communication.
+  6. **Trauma-Informed Care & Mental Health Awareness:**  
+     - Important for understanding and addressing the needs of at-risk populations; a skill that can be developed with targeted training.
+  7. **Data Collection & Progress Monitoring:**  
+     - Relies on literacy/numeracy skills; vital for accountability and tracking progress.
+  8. **Disability Awareness (IDEA’s 13 Disability Categories & DSM-V):**  
+     - Though critical, it was ranked last as ongoing training will help employees acquire these concepts over time.
+
+- **Rationale Behind the Ranking:**  
+  - The top three domains—Emotional Regulation, Communication, and Basic Literacy & Numeracy—were deemed essential because they enable new hires to quickly adapt and understand the other domains.  
+    - **Emotional Regulation:** Skills such as managing impulsivity directly influence the ability to recognize and implement professional boundaries.  
+    - **Communication:** Effective communication is crucial for addressing behavior management and crisis de-escalation scenarios promptly.  
+    - **Basic Literacy & Numeracy:** These foundational skills are necessary for specific training on data collection and monitoring, ensuring that candidates can handle technical aspects of the role.  
+  - Disability Awareness, though important, is ranked last since employees with ongoing training are expected to acquire these concepts on the job.  
+  - The categorization of these domains draws on frameworks from both IDEA and the DSM-V.
+
+---
+
+## LOG ENTRY [2025-01-24]: Assessment Tool Selection for Emotion Regulation
+
+- **Context & Objective:**  
+  Evaluated various emotion regulation assessments—each validated in peer-reviewed studies—to determine which tool best captures the multifaceted aspects of emotion regulation critical for paraprofessional readiness in high-stress environments.
+
+- **Assessments Considered:**  
+  1. **Emotion Regulation Questionnaire (ERQ):**  
+     - **Description:** A 10-item self-report measure assessing cognitive reappraisal and expressive suppression (Gross & John, 2003).  
+     - **Relevance:** Widely used to understand emotion management strategies.
+  2. **Difficulties in Emotion Regulation Scale (DERS):**  
+     - **Description:** A 36-item instrument evaluating dimensions such as nonacceptance, impulse control, goal-directed behavior, emotional awareness, access to strategies, and clarity.  
+     - **Relevance:** Especially useful in clinical settings and directly relevant for managing high-stress situations in paraprofessional roles.  
+     - **Scoring:** Utilizes a Likert scale where lower scores indicate greater adaptability.
+  3. **Cognitive Emotion Regulation Questionnaire (CERQ):**  
+     - **Description:** A 36-item questionnaire measuring nine cognitive coping strategies.  
+     - **Relevance:** Focuses on cognitive aspects of emotion regulation.
+  4. **Emotion Regulation Inventory (ERI):**  
+     - **Description:** Measures three styles of emotion regulation (autonomous, controlled, impersonal) based on self-determination theory.
+  5. **Interpersonal Emotion Regulation Questionnaire (IERQ):**  
+     - **Description:** A 20-item measure assessing the use of social interactions to regulate emotions.
+
+- **Selection & Rationale:**  
+  The **DERS** was selected due to its comprehensive coverage of emotion regulation facets and its direct relevance to the real-world demands on paraprofessionals working with emotionally volatile populations.
+
+---
+
+## LOG ENTRY [2025-01-24]: Communication Assessment Tool Evaluation
+
+- **Theoretical Framework:**  
+  - Explored various communication theories with emphasis on Habermas' theory of communicative action (Habermas, 2015), which differentiates strategic communication from communication aimed at understanding.
+
+- **Models and Assessments Considered:**  
+  - **Affective Communication Assessment (ACA):**  
+    - Focuses on emotional expression and understanding for individuals with complex communication needs.
+  - **Checklist of Communication Competence (Triple C):**  
+    - Evaluates communication skills across five stages using structured observations and tasks.
+  - **Communication Matrix:**  
+    - Assesses communication functions across seven levels, particularly for individuals with complex needs.
+
+- **Comparative Evaluation:**  
+  - **Communicative Competence Scale (CCS):**  
+    - Composed of 36 Likert-scale items assessing the ability to choose appropriate communicative behaviors.
+  - **Final Selection – Interpersonal Communication Competence Scale (ICCS):**  
+    - **Structure:** A 30-item self-report instrument evaluating ten dimensions: self-disclosure, empathy, social relaxation, assertiveness, interaction management, altercentrism, expressiveness, supportiveness, immediacy, and environmental control.  
+    - **Measurement:** Uses a 5-point Likert scale.  
+    - **Rationale:** Chosen for its strong psychometric properties and relevance for paraprofessionals.
+
+---
+
+## LOG ENTRY [2025-01-24, Updated]: Additional Details for ICCS Selection
+
+- **Overview of the ICCS:**  
+  Developed by Rubin and Martin in 1994, the ICCS assesses an individual's ability to manage interpersonal communication across contexts by evaluating:
+  - **Self-Disclosure**
+  - **Empathy**
+  - **Social Relaxation**
+  - **Assertiveness**
+  - **Interaction Management**
+  - **Altercentrism**
+  - **Expressiveness**
+  - **Supportiveness**
+  - **Immediacy**
+  - **Environmental Control**
+
+- **Scoring Rubric:**  
+  - Likert scale from 1 (Strongly Disagree) to 5 (Strongly Agree).  
+  - Includes reverse scoring for negatively worded items, with subscale and total scores calculated by summing respective items.
+  
+- **Reference:**  
+  Rubin, R. B., & Martin, M. M. (1994). *Development of a measure of interpersonal communication competence.* Communication Research Reports, 11(1), 33-44.
+
+---
+
+## LOG ENTRY [2025-01-31]: Literacy and Numeracy Assessment Development
+
+- **Assessment Standards Considered:**  
+  - **WRAT (Wide Range Achievement Test):**  
+    - Gold standard for assessing reading, spelling, and arithmetic; proprietary.
+  - **Alternatives:**  
+    - **Penn Reading Assessment – Computer Adaptive Test (PRA-CAT):** Open-source and available via Concerto.
+    - **California Achievement Test (CAT):** Standardized test for reading, language, and math; some formats may be low-cost.
+    - **Brigance Diagnostic Inventories:** Reviewed as part of the process.
+
+- **Decision Rationale:**  
+  Developed a custom assessment based on:
+  - **10-grade Common Core Standards for Literacy**  
+  - **8th-Grade Standards for Math**  
+  to focus on foundational skills rather than advanced high school-level competencies.
+
+---
+
+## LOG ENTRY [2025-02-07]: Demographic Data Collection & Platform Decision
+
+- **Demographic Data Collection:**  
+  - Collected data on:
+    - **Role:** Administrator, Professional Therapist/Teacher, Paraprofessional, No Experience in the Field.
+    - **Age Category:** Under 18, 18-24, 25-34, 35-44, 45-54, 55+.
+    - **Gender:** Male, Female.
+    - **Education Level:** Ranging from No Degree to Post Graduate Education (including Doctorates).
+
+- **Platform Delivery Decision:**  
+  - **Initial Plan:** Use Moodle LMS for assessment delivery.
+  - **Revised Approach:**  
+    - Selected a dedicated quiz model on the WordPress site for its wider reach, improved user experience, customization, data integration, and ease of setup.
+  - **Final Choice:**  
+    - Implemented using the Forminator plugin due to its flexibility and robust third-party connection options.
+
+---
+
+## LOG ENTRY [2025-02-08]: Database Schema Development
+
+- **Repository Setup:**  
+  - Created the **paraprofessional-assessment-db** repository on GitHub.
+  - Initially considered ElephantSQL, then switched to Heroku after ElephantSQL discontinued services.
+
+- **Heroku Setup & Flask API Development:**  
+  - Logged into Heroku CLI using VS Code Bash Terminal:
+    ```
+    heroku login
+    heroku pg:psql -a paraprofessional-assessment
+    ```
+  - Created a Flask API (`app.py`) with:
+    ```python
+    from flask import Flask
+    app = Flask(__name__)
+
+    @app.route("/")
+    def home():
+        return "Hello, Heroku is running!"
+
+    if __name__ == "__main__":
+        app.run(host="0.0.0.0", port=5000)
+    ```
+  - Committed the Procfile and pushed the changes to GitHub.
+  - Created `requirements.txt` with:
+    ```
+    flask
+    gunicorn
+    ```
+
+- **Literacy and Math Subdomains:**  
+  - **Literacy:**  
+    - Reading Comprehension (4 questions), Grammar & Syntax (3 questions), Critical Thinking (3 questions).
+  - **Math:**  
+    - Numerical Operations (4 questions), Problem Solving (3 questions), Data Interpretation (3 questions).
+
+- **Database Schema:**  
+  Created the **participants** table with columns for demographics, assessment scores (DERS, ICCS, Literacy, Math), overall score, and a timestamp:
+  ```sql
+  CREATE TABLE participants (
+      id SERIAL PRIMARY KEY,
+      name VARCHAR(100),  -- Optional Name
+      email VARCHAR(255),  -- Optional Email
+      role VARCHAR(50),
+      gender VARCHAR(10),
+      education_level VARCHAR(50),
+      -- DERS Scores
+      ders_nonacceptance FLOAT,
+      ders_goals FLOAT,
+      ders_impulse FLOAT,
+      ders_awareness FLOAT,
+      ders_strategies FLOAT,
+      ders_clarity FLOAT,
+      ders_total FLOAT,
+      -- ICCS Scores
+      iccs_self_disclosure FLOAT,
+      iccs_empathy FLOAT,
+      iccs_social_relaxation FLOAT,
+      iccs_assertiveness FLOAT,
+      iccs_altercentrism FLOAT,
+      iccs_interaction_management FLOAT,
+      iccs_expressiveness FLOAT,
+      iccs_supportiveness FLOAT,
+      iccs_immediacy FLOAT,
+      iccs_environmental_control FLOAT,
+      iccs_total FLOAT,
+      -- Literacy Scores
+      literacy_comprehension FLOAT,
+      literacy_grammar FLOAT,
+      literacy_critical_thinking FLOAT,
+      literacy_total FLOAT,
+      -- Math Scores
+      math_numerical_operations FLOAT,
+      math_problem_solving FLOAT,
+      math_data_interpretation FLOAT,
+      math_total FLOAT,
+      -- Weighted Overall Score
+      overall_score FLOAT,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );
+
+LOG ENTRY [2025-02-10]: Database Table Population & Dummy Data Script Development
+
+Data Population Strategy:
+
+Used a dummy script to generate a larger dataset by merging existing collected data with additional datasets that provided standard scores corresponding to gender, age, and education.
+Data for some roles was initially labeled "Other" and then manually updated for Administrators, Therapists/Teachers, and Paraprofessionals.
+Script and Package Setup:
+
+Installed psycopg2-binary: pip install psycopg2-binary
+
+Used DBeaver for database review.
+
+Schema Adjustments:
+
+Added submission_uuid column to link assessments uniquely: 
+
+ALTER TABLE participants ADD COLUMN submission_uuid UUID DEFAULT gen_random_uuid();
+
+Added age_range column: 
+
+ALTER TABLE participants ADD COLUMN age_range VARCHAR(10);
+
+Adjusted education column length: 
+
+ALTER TABLE participants ADD COLUMN education VARCHAR(255);
+
+Data Population Script:
+
+Developed a Python script using psycopg2, Faker, and random to:
+
+Clear the table and reset the sequence.
+
+Generate data for demographics and assessment scores (DERS, ICCS, Literacy, Math).
+Insert the data into the participants table.
+A code snippet from the script:
+
+import random
+import psycopg2
+from faker import Faker
+
+Database connection setup
+DATABASE_URL = "postgres://<credentials>@<host>:<port>/<database>"
+
+fake = Faker()
+total_women = 260
+total_men = 97
+total_participants = total_women + total_men
+
+Role and education distributions defined...
+try: conn = psycopg2.connect(DATABASE_URL) cur = conn.cursor()
+
+perl
+Copy
+# Clear table and reset sequence
+cur.execute("DELETE FROM participants;")
+cur.execute("ALTER SEQUENCE participants_id_seq RESTART WITH 1;")
+
+# Insert new participants data
+for _ in range(total_participants):
+    # Generate demographic and assessment data
+    # ...
+    cur.execute(
+        """
+        INSERT INTO participants 
+        (gender, role, education_level, age_range, 
+        ders_nonacceptance, ders_goals, ders_impulse, ders_awareness, ders_strategies, ders_clarity, ders_total, 
+        iccs_self_disclosure, iccs_empathy, iccs_social_relaxation, iccs_assertiveness, iccs_altercentrism, 
+        iccs_interaction_management, iccs_expressiveness, iccs_supportiveness, iccs_immediacy, iccs_environmental_control, iccs_total, 
+        literacy_comprehension, literacy_grammar, literacy_critical_thinking, literacy_total,
+        math_numerical_operations, math_problem_solving, math_data_interpretation, math_total)
+        VALUES (%s, %s, %s, %s, 
+                %s, %s, %s, %s, %s, %s, %s, 
+                %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
+                %s, %s, %s, %s, 
+                %s, %s, %s, %s, %s);
+        """,
+        (
+            # Insert values here
+        )
+    )
+
+conn.commit()
+print("Dummy data inserted successfully! Total records:", total_participants)
+except Exception as e: print("Error:", e)
+
+finally: cur.close() conn.close()
