@@ -30,8 +30,8 @@ def insert_data(uuid, data, role, form_type):
                 WHERE uuid = %s;
                 """,
                 (
-                    data['nonacceptance'], data['goals'], data['impulse'], data['awareness'],
-                    data['strategies'], data['clarity'], data['total'], uuid
+                    data.get('nonacceptance', 0), data.get('goals', 0), data.get('impulse', 0), data.get('awareness', 0),
+                    data.get('strategies', 0), data.get('clarity', 0), data.get('total', 0), uuid
                 )
             )
         elif form_type == 'iccs':
@@ -45,9 +45,10 @@ def insert_data(uuid, data, role, form_type):
                 WHERE uuid = %s;
                 """,
                 (
-                    data['self_disclosure'], data['empathy'], data['social_relaxation'], data['assertiveness'], 
-                    data['altercentrism'], data['interaction_management'], data['expressiveness'],
-                    data['supportiveness'], data['immediacy'], data['environmental_control'], data['total'], uuid
+                    data.get('self_disclosure', 0), data.get('empathy', 0), data.get('social_relaxation', 0),
+                    data.get('assertiveness', 0), data.get('altercentrism', 0), data.get('interaction_management', 0),
+                    data.get('expressiveness', 0), data.get('supportiveness', 0), data.get('immediacy', 0),
+                    data.get('environmental_control', 0), data.get('total', 0), uuid
                 )
             )
         elif form_type == 'literacy_numeracy':
@@ -59,8 +60,8 @@ def insert_data(uuid, data, role, form_type):
                 WHERE uuid = %s;
                 """,
                 (
-                    data['literacy_comprehension'], data['literacy_grammar'], data['literacy_critical_thinking'], data['literacy_total'],
-                    data['math_numerical_operations'], data['math_problem_solving'], data['math_data_interpretation'], data['math_total'], uuid
+                    data.get('literacy_comprehension', 0), data.get('literacy_grammar', 0), data.get('literacy_critical_thinking', 0), data.get('literacy_total', 0),
+                    data.get('math_numerical_operations', 0), data.get('math_problem_solving', 0), data.get('math_data_interpretation', 0), data.get('math_total', 0), uuid
                 )
             )
 
@@ -77,18 +78,25 @@ def insert_data(uuid, data, role, form_type):
 def webhook():
     try:
         # Get the form data
-        form_data = request.json
+        form_data = request.get_json()
         print("Received form data:", form_data)  # Debug logging
 
-        form_type = form_data.get('form_type')  # 'ders', 'iccs', 'literacy_numeracy', etc.
-        uuid_value = form_data.get('uuid')  # The UUID to link forms
+        # Safely access required keys from the payload
+        form_type = form_data.get('form_type')
+        uuid_value = form_data.get('uuid')
+        data = form_data.get('data')
+        role = form_data.get('role')
 
+        # Validate required keys are present
+        if not form_type or not data or not role:
+            raise ValueError("Missing one or more required keys: form_type, data, or role")
+
+        # If UUID doesn't exist, generate a new one
         if not uuid_value:
-            # If UUID doesn't exist, generate a new one
             uuid_value = str(uuid.uuid4())
 
-        # Insert data for the appropriate form
-        insert_data(uuid_value, form_data['data'], form_data['role'], form_type)
+        # Insert data for the appropriate form using safe key access
+        insert_data(uuid_value, data, role, form_type)
 
         return jsonify({"status": "success", "uuid": uuid_value}), 200
 
