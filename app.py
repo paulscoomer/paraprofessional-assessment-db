@@ -27,7 +27,7 @@ def insert_data(uuid, data, role, form_type):
                 UPDATE participants
                 SET ders_nonacceptance = %s, ders_goals = %s, ders_impulse = %s, ders_awareness = %s, 
                     ders_strategies = %s, ders_clarity = %s, ders_total = %s
-                WHERE uuid = %s;
+                WHERE submission_uuid = %s;
                 """,
                 (
                     data.get('nonacceptance', 0), data.get('goals', 0), data.get('impulse', 0), data.get('awareness', 0),
@@ -42,7 +42,7 @@ def insert_data(uuid, data, role, form_type):
                     iccs_assertiveness = %s, iccs_altercentrism = %s, iccs_interaction_management = %s, 
                     iccs_expressiveness = %s, iccs_supportiveness = %s, iccs_immediacy = %s, 
                     iccs_environmental_control = %s, iccs_total = %s
-                WHERE uuid = %s;
+                WHERE submission_uuid = %s;
                 """,
                 (
                     data.get('self_disclosure', 0), data.get('empathy', 0), data.get('social_relaxation', 0),
@@ -57,7 +57,7 @@ def insert_data(uuid, data, role, form_type):
                 UPDATE participants
                 SET literacy_comprehension = %s, literacy_grammar = %s, literacy_critical_thinking = %s, literacy_total = %s,
                     math_numerical_operations = %s, math_problem_solving = %s, math_data_interpretation = %s, math_total = %s
-                WHERE uuid = %s;
+                WHERE submission_uuid = %s;
                 """,
                 (
                     data.get('literacy_comprehension', 0), data.get('literacy_grammar', 0), data.get('literacy_critical_thinking', 0), data.get('literacy_total', 0),
