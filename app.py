@@ -4,9 +4,10 @@ from flask import Flask, request, jsonify
 from psycopg2.extras import Json
 
 # Database connection setup
-DATABASE_URL = "postgres://u4gn2oc4sl89kl:pab7eeb42fcd87eabdaf527f38bd38ec839730ee50c4c30160a0fd620d6951f79@cd1goc44htrmfn.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dedbcjon211l4f"
+DATABASE_URL = "your_database_url"
 
 app = Flask(__name__)
+
 @app.route('/')
 def home():
     return "Flask is running, and the webhook is available at /webhook."
@@ -48,7 +49,20 @@ def insert_data(uuid, data, role, form_type):
                     data['supportiveness'], data['immediacy'], data['environmental_control'], data['total'], uuid
                 )
             )
-        # Add similar blocks for other forms such as literacy and math
+        elif form_type == 'literacy_numeracy':
+            cur.execute(
+                """
+                UPDATE participants
+                SET literacy_comprehension = %s, literacy_grammar = %s, literacy_critical_thinking = %s, literacy_total = %s,
+                    math_numerical_operations = %s, math_problem_solving = %s, math_data_interpretation = %s, math_total = %s
+                WHERE uuid = %s;
+                """,
+                (
+                    data['literacy_comprehension'], data['literacy_grammar'], data['literacy_critical_thinking'], data['literacy_total'],
+                    data['math_numerical_operations'], data['math_problem_solving'], data['math_data_interpretation'], data['math_total'], uuid
+                )
+            )
+
         conn.commit()
 
     except Exception as e:
@@ -63,7 +77,9 @@ def webhook():
     try:
         # Get the form data
         form_data = request.json
-        form_type = form_data.get('form_type')  # 'ders', 'iccs', etc.
+        print("Received form data:", form_data)  # Debug logging
+
+        form_type = form_data.get('form_type')  # 'ders', 'iccs', 'literacy_numeracy', etc.
         uuid_value = form_data.get('uuid')  # The UUID to link forms
 
         if not uuid_value:
@@ -78,7 +94,6 @@ def webhook():
     except Exception as e:
         print(f"Error processing webhook: {e}")
         return jsonify({"status": "error", "message": str(e)}), 500
-
 
 if __name__ == '__main__':
     app.run(debug=True)
