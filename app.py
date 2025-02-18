@@ -1,10 +1,11 @@
+import os
 import psycopg2
 import uuid
 from flask import Flask, request, jsonify
 from psycopg2.extras import Json
 
 # Database connection setup
-DATABASE_URL = "your_database_url"
+DATABASE_URL = os.environ.get('DATABASE_URL', 'your_database_url')
 
 app = Flask(__name__)
 
@@ -96,4 +97,5 @@ def webhook():
         return jsonify({"status": "error", "message": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
