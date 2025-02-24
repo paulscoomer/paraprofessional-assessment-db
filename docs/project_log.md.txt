@@ -587,5 +587,32 @@ for _ in range(total_participants):
 conn.commit()
 print("Dummy data inserted successfully! Total records:", total_participants)
 except Exception as e: print("Error:", e)
-
 finally: cur.close() conn.close()
+
+## LOG ENTRY [2025-02-18]: Code development testing
+1. Code Development and Testing
+
+Updated the Flask webhook endpoint (/webhook) to receive JSON payloads from various forms (DERS, ICCS, Literacy-Numeracy).
+Implemented safe key access in the insert_data() function to handle missing fields without crashing the update queries.
+Corrected the SQL queries to use the correct column name (submission_uuid) for record matching.
+Tested the API using PowerShell (Invoke-RestMethod) and cURL; received success responses with the expected UUID (e.g., "7700c142-fcc1-4cd8-a462-1aab42a8e1a3").
+2. Debugging and Form Integration
+
+Encountered issues with malformed JSON and extra newline characters when testing in Postman; resolved these by ensuring the URL was typed exactly (without trailing newlines) and by using here-strings or ConvertTo-Json for payload construction.
+Used the Postman Console to inspect request details, confirming that the correct headers (Content-Type: application/json) and properly formatted JSON are being sent.
+Monitored Heroku logs to verify that incoming POST requests are reaching the endpoint and being processed as expected.
+3. Extending Functionality for the DERS Form
+
+Modified the insert_data() function to optionally accept extra fields for DERS submissions.
+For the DERS form, updated the SQL UPDATE statement to also set top-level fields: gender, education_level, and age_range, based on values passed in the JSON payload.
+Adjusted the webhook endpoint to extract these extra fields from the request and pass them to the insert_data() function when form_type is "ders".
+Testing confirmed that while ICCS and Literacy-Numeracy submissions update as expected, the DERS form now also includes these additional fields when provided.
+4. Current Status and Next Steps
+
+The API is successfully deployed on Heroku and processes JSON payloads for all form types, updating the corresponding database record (using the provided UUID).
+Manual testing via Postman and PowerShell has confirmed successful updates for ICCS and Literacy-Numeracy; additional testing for DERS with the extra fields is ongoing.
+Next Steps:
+Integrate the live Forminator forms on the WordPress site with the API endpoints.
+Continue monitoring Heroku logs and verifying updates via DBeaver to ensure that all fields (including gender, education_level, and age_range for DERS) are correctly updated.
+Consider implementing an upsert mechanism if needed, so that a record is created if one does not exist for a given UUID.
+
